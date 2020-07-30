@@ -48,8 +48,6 @@
             color: rgba(255,255,255,0.9); /*this changes the text color*/
         }
         
-  
-
         /*this defines the style of the legend title*/
         h4 {
             /*text-transform: lowercase;*/
@@ -218,8 +216,6 @@
             margin-bottom: 0;
         }
 
-
-
     </style>
 </head>
 
@@ -240,11 +236,6 @@
             <li><span style='background: #006666;'></span>Very Low Social Satisfaction</li> 
         </ul>
     </div>
-
-
-
-
-
 
     <!--Here between the script marks there is all the javascript code that control the user interaction-->
     <script>
@@ -273,6 +264,7 @@
                 map.getCanvas().style.cursor = features.length ? 'pointer' : '';
             }
         });
+        
         /*this block defines the mouse click */
         map.on('click', function (event) {
             var geometry = event.point;
