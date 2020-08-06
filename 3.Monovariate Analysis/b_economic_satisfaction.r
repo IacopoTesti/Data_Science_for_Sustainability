@@ -26,3 +26,23 @@ barplot(freq2, names.arg = c("ass. insufficenti", "scarse", "adeguate", "ottime"
         main="Valutazione delle risorse \n economiche familiari (ultimi 12 mesi)",cex.main=0.8,
         legend.text=c("assolutamente \n insufficenti","scarse","adeguate","ottime"),
         args.legend=list(cex=0.50,x="topright"), ylab="frequenze assolute",col=c("darkred", "darkorange", "green", "darkgreen"), las=1.5,cex.names = 0.6,las=1,cex.axis=0.7,cex.lab=0.6, ylim=c(0,3500), horiz=FALSE)
+
+# set piecharts besides
+par(mfcol=c(1,2))
+
+# first piechart
+pct<-round(table(na.omit(giov_laur_ita$SITEC))/length(giov_laur_ita$FUTUASP)*100,2)
+et<-paste("",pct,"%",sep=" ")
+pie(pct,labels=et,
+    main="Valutazione del livello di soddisfazione \n economica laureati (ultimi 12 mesi)",
+    cex.main=0.8,
+    col=c("darkred", "red", "lightblue", "blue"))
+legend(x=0.3,y=-0.8, legend=c("per niente",  "poco", "abbastanza", "molto"),pch=22,border="grey", col=c("darkred", "red", "lightblue", "blue"),cex=0.6)
+
+# second piechart
+pct1<-round(table(na.omit(giov_dipl_ita$SITEC))/length(giov_dipl_ita$FUTUASP)*100,2)
+et<-paste("",pct1,"%",sep=" ")
+pie(pct1,labels=et,
+    main="Valutazione del livello di soddisfazione \n economica diplomati (ultimi 12 mesi)",
+    cex.main=0.8,
+    col=c("darkred", "red", "lightblue", "blue"))
